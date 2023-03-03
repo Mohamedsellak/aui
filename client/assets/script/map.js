@@ -8,8 +8,6 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 locations = []
 
-// dealing with clicks in map
-var popup = L.popup();
 
 // Define the new marker icon
 var newIcon = L.icon({
@@ -17,6 +15,7 @@ var newIcon = L.icon({
     iconSize: [32, 32]
 });
 
+// dealing with clicks in map
 function onMapClick(e) {
     if (locations.length == 0) {
         var marker = L.marker(e.latlng, { icon: newIcon }).addTo(map);
